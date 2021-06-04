@@ -6,7 +6,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Preloader/>
+        {/* Page preloader: just for visual effects... for now */}
+        {/* <Preloader/> */}
         <Header/>
       </div>
     );

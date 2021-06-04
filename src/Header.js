@@ -1,12 +1,20 @@
 import { Component } from "react";
 
+function Container(props) {
+    return(
+        <div className="container">
+            {props.children}
+        </div>
+    )
+}
+
 const NavLink = function(props) {
     return (
       <a className="nav-link" href={props.href} >
         {props.text} 
-        {props.current === true && <span className="sr-only">(current)</span>}
+        {props.current ? <span className="sr-only">(current)</span> : ''}
       </a>
-    );
+    ); 
 }
 
 function HamButton(props) {
@@ -28,7 +36,7 @@ function HamButton(props) {
 function Navigation(props) {
     return (
       <nav className="navbar navbar-expand-lg">
-        <div className="container">
+        <Container>
           <a className="navbar-brand" href="index.html">
             <h2>
               Sixteen <em>Clothing</em>
@@ -38,7 +46,7 @@ function Navigation(props) {
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item active">
-                <NavLink text="Home" href="index.html" current={true}/>
+                <NavLink text="Home" href="index.html" current={true} />
               </li>
               <li className="nav-item">
                 <NavLink text="Our Products" href="products.html" />
@@ -51,7 +59,7 @@ function Navigation(props) {
               </li>
             </ul>
           </div>
-        </div>
+        </Container>
       </nav>
     );
 }
