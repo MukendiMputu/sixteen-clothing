@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Preloader from "./Preloader";
 import Header from "./Header";
+/* import Preloader from "./Preloader"; */
 
 class App extends Component {
 
